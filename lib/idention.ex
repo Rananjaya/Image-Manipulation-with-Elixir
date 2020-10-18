@@ -10,10 +10,12 @@ defmodule Idention do
   end
   def filter_odd_squares(%Idention.Image{grid: grid} = image) do 
     
-    Enum.filter grid, fn({code, _index}) ->
+    grid = Enum.filter grid, fn({code, _index}) ->
        rem(code, 2) == 0 
-       
+
     end
+
+    %Idention.Image{image | grid: grid}
   
   end
 def pick_color( %Idention.Image{hex: [r,g,b | _tail]} = image) do 
