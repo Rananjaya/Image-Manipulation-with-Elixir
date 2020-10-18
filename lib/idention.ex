@@ -5,6 +5,15 @@ defmodule Idention do
      |> hash_input
      |> pick_color
      |> build_grid
+     |> filter_odd_squares
+
+  end
+  def filter_odd_squares(%Idention.Image{grid: grid} = image) do 
+    
+    Enum.filter grid, fn({code, _index}) ->
+       rem(code, 2) == 0
+    end
+  
   end
 def pick_color( %Idention.Image{hex: [r,g,b | _tail]} = image) do 
   #this is the pattern maching
