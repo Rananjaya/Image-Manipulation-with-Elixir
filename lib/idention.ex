@@ -5,10 +5,11 @@ defmodule Idention do
      |> hash_input
      |> pick_color
   end
-def pick_color(image) do 
-  %Idention.Image{hex: [r,g,b | _tail]} = image #this is the pattern maching
+def pick_color( %Idention.Image{hex: [r,g,b | _tail]} = image) do 
+  #this is the pattern maching
  #[r, g, b | _tail] = hex_list # we can do same pattern maching thing as above 
- [r,g,b]
+
+%Idention.Image{image | color: {r,g,b}}
   
 end
 
