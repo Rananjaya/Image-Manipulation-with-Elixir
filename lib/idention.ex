@@ -11,7 +11,8 @@ defmodule Idention do
   def filter_odd_squares(%Idention.Image{grid: grid} = image) do 
     
     Enum.filter grid, fn({code, _index}) ->
-       rem(code, 2) == 0
+       rem(code, 2) == 0 
+       
     end
   
   end
